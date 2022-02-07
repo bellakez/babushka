@@ -34,6 +34,8 @@
       <template>
         <article>
           <h2></h2>
+          <h3></h3>
+          <p></p>
           <img src="" alt="" />
         </article>
       </template>
@@ -55,6 +57,25 @@
 
       const header = document.querySelector("header h1");
 
+      document.addEventListener("DOMContentLoaded", start)
+      let menuen;
+      let filter = "forretter";
+      function start(){
+          const filtrerKnap = document.querySelectorAll("nav button");
+          filtrerKnap.forEach(knap => knap.addEventListener("click", filtrerKategori)) 
+          loadJSON();
+      }
+
+      function filtrerKategori(){
+          filter = this.dataset.kategori; 
+          document.querySelector(".valgt").classList.remove(".valgt");
+          this.classList.add(".valgt")
+          viskategori();
+          header.textContent = this.textContent;
+      }
+
+     
+      
       async function hentdata() {
         const respons = await fetch(url, options);
         const json = await respons.json();
@@ -62,12 +83,21 @@
         console.log("her er json");
       }
 
+      function vis()
+      
       function vis(menu) {
         menu.forEach((kategori) => {
           const klon = temp.cloneNode(true).content;
           klon.querySelector("h2").textContent = kategori.navn;
-          /*klon.querySelector("img").src = "faces/" + person.profilbilllede;*/
+          klon.querySelector("h3").textContent = kategori.pris;
+          klon.querySelector("p").textContent = kategori.kortbeskrivelse;
+          klon.querySelector("img").src = "medium/" + kategori.md;
           container.appendChild(klon);
+
+        if (filter == kategori.forretter || filter == "alle"){
+        } else {
+            (filter == kategori.forretter || filter == "alle")
+        }
         });
       }
       hentdata();
