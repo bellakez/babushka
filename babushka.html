@@ -41,13 +41,36 @@
       </template>
     </section>
     <script>
-      const container = document.querySelector("section");
-      const temp = document.querySelector("template");
-
       const url = "https://babushka-dd8a.restdb.io/rest/menu";
       const key = "600ec2fb1346a1524ff12de4";
+      let menu;
+      let filter = "alle";
+      const filtrerKnap = document.querySelectorAll("button");
 
-      let data = [];
+      document.addEventListener("DOMContentLoaded", start);
+
+      function start() {
+        filtrerKnap.forEach((knap) =>
+          knap.addEventListener("click", filtrerKategori)
+        );
+        /*loadJSON();*/
+      }
+
+      function filtrerKategori() {
+        filter = this.dataset.kategori;
+        document.querySelector("h1").textContent = this.textContent;
+        /*document.querySelector(".valgt").classList.remove(".valgt");
+          this.classList.add(".valgt")
+          header.textContent = this.textContent;*/
+        vis();
+      }
+
+      async function hentdata() {
+        const respons = await fetch(url, options);
+        const json = await respons.json();
+        vis();
+        console.log("her er json");
+      }
 
       const options = {
         headers: {
@@ -55,49 +78,27 @@
         },
       };
 
-      const header = document.querySelector("header h1");
+      /*const header = document.querySelector("header h1");
 
-      document.addEventListener("DOMContentLoaded", start)
-      let menuen;
-      let filter = "forretter";
-      function start(){
-          const filtrerKnap = document.querySelectorAll("nav button");
-          filtrerKnap.forEach(knap => knap.addEventListener("click", filtrerKategori)) 
-          loadJSON();
-      }
 
-      function filtrerKategori(){
-          filter = this.dataset.kategori; 
-          document.querySelector(".valgt").classList.remove(".valgt");
-          this.classList.add(".valgt")
-          viskategori();
-          header.textContent = this.textContent;
-      }
+      let menu;
+      let filter = "forretter";*/
 
-     
-      
-      async function hentdata() {
-        const respons = await fetch(url, options);
-        const json = await respons.json();
-        vis(json);
-        console.log("her er json");
-      }
+      const container = document.querySelector("section");
+      const temp = document.querySelector("template");
 
-      function vis()
-      
-      function vis(menu) {
+      function vis() {
+        console.log(menu);
+        container.innerHTML = "";
         menu.forEach((kategori) => {
-          const klon = temp.cloneNode(true).content;
-          klon.querySelector("h2").textContent = kategori.navn;
-          klon.querySelector("h3").textContent = kategori.pris;
-          klon.querySelector("p").textContent = kategori.kortbeskrivelse;
-          klon.querySelector("img").src = "medium/" + kategori.md;
-          container.appendChild(klon);
-
-        if (filter == kategori.forretter || filter == "alle"){
-        } else {
-            (filter == kategori.forretter || filter == "alle")
-        }
+          if (filter == menu.kategori || filter == "alle") {
+            const klon = temp.cloneNode(true);
+            klon.querySelector("h2").textContent = kategori.navn;
+            klon.querySelector("h3").textContent = kategori.pris;
+            klon.querySelector("p").textContent = kategori.kortbeskrivelse;
+            /*klon.querySelector("img").src = "medium/" + kategori.md;*/
+            container.appendChild(klon);
+          }
         });
       }
       hentdata();
