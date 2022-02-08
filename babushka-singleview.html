@@ -5,16 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      }
+      article {
+        padding: 5px;
+        margin: 5px;
+        border: 1px solid;
+      }
+      img {
+        max-width: 100%;
+      }
+    </style>
   </head>
   <body>
     <main>
       <button>Back</button>
-      <article>
-        <h2></h2>
-        <h3></h3>
-        <p></p>
-        <img src="" alt="" />
-      </article>
+      <section>
+        <article>
+          <h2></h2>
+          <h3></h3>
+          <p></p>
+          <img src="" alt="" />
+        </article>
+      </section>
     </main>
 
     <script>
