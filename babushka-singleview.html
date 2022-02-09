@@ -5,18 +5,101 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@300&display=swap"
+      rel="stylesheet"
+    />
     <style>
       section {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        padding: 8px;
+        margin: 8px;
+      }
+      h2 {
+        font-family: "Source Serif 4", sans-serif;
+        font-size: 1.1rem;
+      }
+      h3 {
+        font-family: "Source Serif 4", sans-serif;
+        font-size: 0.8rem;
+      }
+
+      p {
+        font-family: "Source Serif 4", sans-serif;
+        font-size: 0.7rem;
+        font-weight: lighter;
+      }
+
+      button {
+        cursor: pointer;
+        margin: 2px;
+        border-radius: 5px;
+        background-color: rgb(205, 184, 172);
+        border: none;
+        list-style: none;
       }
       article {
-        padding: 5px;
-        margin: 5px;
+        padding: 10px;
+        margin: 10px;
+        /*border-radius: 5%;*/
+        background-color: rgb(231, 222, 217);
         border: 1px solid;
+        border-color: rgb(131, 124, 121);
       }
       img {
         max-width: 100%;
+      }
+      @media only screen and (min-width: 700px) {
+        h2 {
+          font-family: "Source Serif 4", sans-serif;
+          font-size: 1.5rem;
+        }
+        h3 {
+          font-family: "Source Serif 4", sans-serif;
+          font-size: 1.1rem;
+        }
+
+      p {
+        font-family: 'Source Serif 4', sans-serif;
+        font-size: 1rem;
+        font-weight: lighter;
+      }
+        section {
+          padding: 20px;
+          margin: 20px;
+        }
+        button {
+          background-color: rgb(205, 184, 172);
+          border: none;
+          list-style: none;
+          border-radius: 8px;
+          padding: 8px 16px;
+          text-align: center;
+          text-decoration: none;
+          font-family: "Source Serif 4", sans-serif;
+          display: inline-block;
+          font-size: 1rem;
+          cursor: pointer;
+          margin: 10px;
+        }
+        button:hover {
+          background-color: rgb(231, 222, 217);
+        }
       }
     </style>
   </head>
@@ -25,10 +108,10 @@
       <button>Back</button>
       <section>
         <article>
+          <img src="" alt="" />
           <h2></h2>
           <h3></h3>
           <p></p>
-          <img src="" alt="" />
         </article>
       </section>
     </main>
