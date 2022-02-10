@@ -25,10 +25,10 @@
     />
     <style>
       section {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        padding: 8px;
-        margin: 8px;
+        display: flex;
+        justify-content: center;
+        margin: 5px;
+        padding: 5px;
       }
       h2 {
         font-family: "Source Serif 4", sans-serif;
@@ -49,17 +49,23 @@
         cursor: pointer;
         margin: 2px;
         border-radius: 5px;
+        padding: 4px 8px;
         background-color: rgb(205, 184, 172);
         border: none;
         list-style: none;
+        font-family: "Source Serif 4", sans-serif;
+        display: inline-block;
+        font-size: 0.9rem;
+        margin: 10px;
       }
       article {
-        padding: 10px;
-        margin: 10px;
+        padding: 5px;
+        margin: 5px;
         /*border-radius: 5%;*/
         background-color: rgb(231, 222, 217);
         border: 1px solid;
-        border-color: rgb(131, 124, 121);
+        border-color: rgb(200, 188, 182);
+        display: inline-block;
       }
       img {
         max-width: 100%;
@@ -74,12 +80,24 @@
           font-size: 1.1rem;
         }
 
-      p {
-        font-family: 'Source Serif 4', sans-serif;
-        font-size: 1rem;
-        font-weight: lighter;
-      }
+        article {
+          padding: 10px;
+          margin: 20px;
+          /*border-radius: 5%;*/
+          background-color: rgb(231, 222, 217);
+          border: 1px solid;
+          border-color: rgb(131, 124, 121);
+          width: 600px;
+          height: 600px;
+        }
+        p {
+          font-family: "Source Serif 4", sans-serif;
+          font-size: 1rem;
+          font-weight: lighter;
+        }
         section {
+          display: flex;
+          justify-content: space-around;
           padding: 20px;
           margin: 20px;
         }

@@ -26,9 +26,9 @@
     <style>
       section {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        padding: 8px;
-        margin: 8px;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        padding: 5px;
+        margin: 5px;
       }
       h1 {
         font-family: "Berkshire Swash", cursive;
@@ -49,6 +49,13 @@
         font-size: 0.9rem;
         font-weight: lighter;
       }
+      nav {
+        display: flex;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+        padding: 5px;
+        margin: 5px;
+      }
       button {
         cursor: pointer;
         margin: 2px;
@@ -56,6 +63,9 @@
         background-color: rgb(205, 184, 172);
         border: none;
         list-style: none;
+        font-family: "Source Serif 4", sans-serif;
+        padding: 4px 8px;
+        font-size: 0.7rem;
       }
       article {
         padding: 10px;
@@ -63,7 +73,8 @@
         /*border-radius: 5%;*/
         background-color: rgb(231, 222, 217);
         border: 1px solid;
-        border-color: rgb(166, 157, 153);
+        border-color: rgb(200, 188, 182);
+        display: inline-block;
       }
       img {
         max-width: 100%;
@@ -89,7 +100,7 @@
         }
         section {
           padding: 20px;
-          margin: 20px;
+          margin: 30px;
         }
         nav {
           display: flex;
@@ -107,9 +118,8 @@
           text-decoration: none;
           display: inline-block;
           font-family: "Source Serif 4", sans-serif;
-          font-size: 1rem;
+          font-size: 0.9rem;
           cursor: pointer;
-          margin: 10px;
         }
         button:hover {
           background-color: rgb(231, 222, 217);
@@ -135,14 +145,16 @@
       <img src="splashbillede.jpg" alt="" />
     </div>
     <h1>Menu</h1>
-    <nav>
-      <button data-menu="alle" class="valgt">Hele menuen</button>
-      <button data-menu="forretter">Forretter</button>
-      <button data-menu="hovedretter">Hovedretter</button>
-      <button data-menu="sideorders">Sideorders</button>
-      <button data-menu="desserter">Desserter</button>
-      <button data-menu="drikkevarer">Drikkevarer</button>
-    </nav>
+    <div>
+      <nav>
+        <button data-menu="alle" class="valgt">Hele menuen</button>
+        <button data-menu="forretter">Forretter</button>
+        <button data-menu="hovedretter">Hovedretter</button>
+        <button data-menu="sideorders">Sideorders</button>
+        <button data-menu="desserter">Desserter</button>
+        <button data-menu="drikkevarer">Drikkevarer</button>
+      </nav>
+    </div>
     <!--<aside id="modal">
       <article>
         <h2></h2>
@@ -156,10 +168,10 @@
     <section>
       <template>
         <article>
+          <img src="" alt="" />
           <h2></h2>
           <h3></h3>
           <p></p>
-          <img src="" alt="" />
         </article>
       </template>
     </section>
